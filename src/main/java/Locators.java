@@ -1,6 +1,6 @@
 public class Locators {
-// Кликабельная надпись Яндекс By.xpath("//img[@alt='Yandex']"
-// Кликабельная надпись Самокат By.xpath("//img[@alt='Scooter']"
+// Кликабельная надпись ЯндексBy.className("Header_LogoYandex__3TSOI")
+// Кликабельная надпись Самокат By.className("Header_LogoScooter__3lsAR")
 // Кнопка Куки By.id("rcc-confirm-button")"
 // Кнопка Заказать By.xpath(".//button[@class='Button_Button__ra12g']"
 // Кнопка Статус Заказа By.xpath("//button[@class='Header_Link__1TAG7']"

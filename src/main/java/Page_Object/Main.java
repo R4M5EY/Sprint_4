@@ -9,7 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class Main {
+
     private WebDriver driver;
+
+    // локатор для лого "Яндекс"
+    private By yandexLogo =  By.className("Header_LogoYandex__3TSOI");
+
+    // локатор для лого "Самокат"
+    private By samokatLogo = By.className("Header_LogoScooter__3lsAR");
+
     // локатор кнопки куки
     private By buttonCookie = By.id("rcc-confirm-button");
     // локатор для кнопки "Заказать" вверху страницы
@@ -71,32 +79,33 @@ public class Main {
         this.driver = driver;
     }
 
-
-    public  void  setButtonCookie(){
+    public void setYandexLogo() { driver.findElement(yandexLogo).click(); }
+    public void setSamokatLogo() { driver.findElement(samokatLogo).click(); }
+    public void setButtonCookie(){
         driver.findElement(buttonCookie).click();
     }
-    public  void setButtonOrderUp(){
+    public void setButtonOrderUp(){
         driver.findElement(buttonOrderUp).click();
     }
-    public  void setButtonOrderDown(){
+    public void setButtonOrderDown(){
         driver.findElement(buttonOrderDown).click();
     }
-    public  void setName(String nameEnter){
+    public void setName(String nameEnter){
         driver.findElement(name).sendKeys(nameEnter);
     }
-    public  void setSurname(String surnameEnter){
+    public void setSurname(String surnameEnter){
         driver.findElement(surname).sendKeys(surnameEnter);
     }
-    public  void setAddress(String addressEnter){
+    public void setAddress(String addressEnter){
         driver.findElement(address).sendKeys(addressEnter);
     }
-    public  void setMetro(){
+    public void setMetro(){
         driver.findElement(metro).sendKeys(Keys.ARROW_DOWN);
     }
-    public  void setMetro2(){
+    public void setMetro2(){
         driver.findElement(metroStation).click();
     }
-    public  void setPhone(String phoneEnter){
+    public void setPhone(String phoneEnter){
         driver.findElement(phone).sendKeys(phoneEnter);
     }
     public void setButtonThen(){
