@@ -15,7 +15,6 @@ public class FieldsErrorAdditionalTests {
         driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/");
     }
-
     // Проверка ошибки поля "Имя"
     @Test
     public void nameFieldError() {
@@ -26,7 +25,6 @@ public class FieldsErrorAdditionalTests {
         Assertions.assertTrue(driver.findElement(By.xpath("//*[text()='Введите корректное имя']")).getText()
                 .contains("Введите корректное имя"));
     }
-
     // Проверка ошибки поля "Фамилия"
     @Test
     public void surnameFieldError() {
@@ -37,7 +35,6 @@ public class FieldsErrorAdditionalTests {
         Assertions.assertTrue( driver.findElement(By.xpath("//*[text()='Введите корректную фамилию']")).getText()
                 .contains("Введите корректную фамилию"));
     }
-
     // Проверка ошибки поля "Адрес"
     @Test
     public void addressFieldError() {
@@ -49,7 +46,6 @@ public class FieldsErrorAdditionalTests {
         Assertions.assertTrue( driver.findElement(By.xpath("//*[text()='Введите корректный адрес']")).getText()
                 .contains("Введите корректный адрес"));
     }
-
     // Проверка ошибки поля "Станция метро"
     @Test
     public void metroStationFieldError1() {
@@ -85,10 +81,8 @@ public class FieldsErrorAdditionalTests {
                 .contains("Введите корректный номер"));
     }
 
-
     @After
     public void teardown() {
         driver.quit();
     }
-
 }
