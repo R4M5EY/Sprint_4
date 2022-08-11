@@ -1,4 +1,4 @@
-import Page_Object.Main;
+import pageObject.Main;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class LogoAdditionalTests {
-
     private WebDriver driver;
 
     @Before
@@ -16,7 +15,6 @@ public class LogoAdditionalTests {
         driver = new ChromeDriver();
         driver.get("https://qa-scooter.praktikum-services.ru/order/");
     }
-
     // Тест на проверку логотипа "Самокат"
     @Test
     public void samokatLogoTest() {
@@ -24,14 +22,12 @@ public class LogoAdditionalTests {
         main.setSamokatLogo();
         Assertions.assertTrue(driver.findElements(By.className("Home_Header__iJKdX")).size()==1, "Главная страница не открылась");
     }
-
     // Тест на проверку логотипа "Яндекс"
     @Test
     public void yandexLogoTest() {
         Main main = new Main(driver);
         main.setYandexLogo();
     }
-
     @After
     public void teardown() {
         driver.quit();

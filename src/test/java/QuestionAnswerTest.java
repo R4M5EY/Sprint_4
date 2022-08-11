@@ -1,4 +1,4 @@
-import Page_Object.QuestionAnswer;
+import pageObject.QuestionAnswer;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -9,15 +9,12 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import static org.junit.Assert.*;
 
-
 @RunWith(Parameterized.class)
 
 public class QuestionAnswerTest {
-
     private WebDriver driver;
     private final String expected;
     private final String questionText;
-
     public QuestionAnswerTest(String questionText, String expected) {
         this.questionText = questionText;
         this.expected = expected;
@@ -42,21 +39,15 @@ public class QuestionAnswerTest {
 
         QuestionAnswer objHomePage = new QuestionAnswer(driver);
         objHomePage.waitForLoadHomePage();
-
         WebElement element = driver.findElement(By.xpath("//*[text()='" + questionText + "']"));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", element);
-
         driver.findElement(By.xpath("//*[text()='" + questionText + "']")).click();
         objHomePage.waitForLoadQuestionText(expected);
-
         String actual = objHomePage.getQuestionText(expected);
-
         assertEquals(expected, actual);
     }
-
     @After
     public void teardown() {
         driver.quit();
     }
-
 }
